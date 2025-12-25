@@ -1,6 +1,23 @@
 import * as Icons from "../icons";
 
-export const NAV_DATA = [
+export interface SubNavItem {
+  title: string;
+  url: string;
+}
+
+export interface MainNavItem {
+  title: string;
+  url?: string;
+  icon?: any;
+  items: SubNavItem[];
+}
+
+export interface NavSection {
+  label: string;
+  items: MainNavItem[];
+}
+
+export const NAV_DATA: NavSection[] = [
   {
     label: "MAIN MENU",
     items: [
