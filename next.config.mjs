@@ -25,10 +25,11 @@ const nextConfig = {
     ]
   },
   async rewrites() {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     return [
       {
         source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_BASE_URL}/api/:path*`,
+        destination: `${baseUrl}/api/:path*`,
       },
     ];
   },
